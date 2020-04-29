@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'MetaOT-Book';
+  src: url('../fonts/MetaOT-Book.otf') format('opentype');
+}
+
+body {
+  font-family: 'MetaOT-Book, Calibri, Arial';
+}

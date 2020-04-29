@@ -7,13 +7,18 @@
   },
   "dependencies": {
     "@hapi/iron": "6.0.0",
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
     "argon2": "^0.26.2",
+    "clsx": "^1.1.0",
     "cookie": "^0.4.1",
     "mongoose": "^5.9.10",
     "next": "latest",
     "next-connect": "^0.6.1",
+    "nprogress": "^0.2.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "swr": "^0.2.0"
