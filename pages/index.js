@@ -1,24 +1,25 @@
-import { useUser, fetcher } from '../lib/hooks'
-import useSWR from 'swr'
+import useSWR from 'swr';
+
+import { fetcher, useUser } from '../lib/hooks';
 
 function UserList() {
-  const { data: { users } = {} } = useSWR('/api/users', fetcher)
+  const { data: { users } = {} } = useSWR('/api/users', fetcher);
   return (
     <>
       <h2>All users</h2>
       {!!users?.length && (
         <ul>
-          {users.map(user => (
-            <li key={user.username}>{JSON.stringify(user)}</li>
+          {users.map((user) => (
+            <li key={user.username}>{JSON.stringify(user.username)}</li>
           ))}
         </ul>
       )}
     </>
-  )
+  );
 }
 
 export default function HomePage() {
-  const [user] = useUser()
+  const [user] = useUser();
   return (
     <>
       <h1>
@@ -53,7 +54,7 @@ export default function HomePage() {
           Home
         </li>
       </ol>
-      {user && <p>Currently logged in as: {JSON.stringify(user)}</p>}
+      {user && <p>Currently logged in as: {JSON.stringify(user.username)}</p>}
       <UserList />
       <style jsx>{`
         li {
@@ -61,5 +62,5 @@ export default function HomePage() {
         }
       `}</style>
     </>
-  )
+  );
 }
