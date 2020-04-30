@@ -1,4 +1,5 @@
-import { Container, makeStyles, Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 

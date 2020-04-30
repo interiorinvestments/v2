@@ -5,9 +5,9 @@ import {
   Grid,
   IconButton,
   Link,
-  makeStyles,
   Typography,
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import EmailIcon from '@material-ui/icons/Email';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -163,22 +163,18 @@ const Footer = ({ className, ...rest }) => {
         <Box my={3}>
           <Divider />
         </Box>
-        <Grid container spacing={3}>
-          <Grid item>
-            <Typography variant="body2">
-              With office locations in Lincolnshire, IL — Chicago, IL — St.
-              Louis, MO — Madison, WI — Milwaukee, WI.{' '}
-              <Link
-                color="textSecondary"
-                href="https://interiorinvestments.com/showrooms"
-                target="_blank"
-              >
-                View All Locations
-              </Link>
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid item>
+        <Typography variant="body2">
+          With office locations in Lincolnshire, IL — Chicago, IL — St. Louis,
+          MO — Madison, WI — Milwaukee, WI.{' '}
+          <Link
+            color="textSecondary"
+            href="https://interiorinvestments.com/showrooms"
+            target="_blank"
+          >
+            View All Locations
+          </Link>
+        </Typography>
+        <Box mt={3}>
           <Typography variant="caption">
             <Link
               color="textSecondary"
@@ -199,7 +195,7 @@ const Footer = ({ className, ...rest }) => {
               &copy; Interior Investments
             </Link>
           </Typography>
-        </Grid>
+        </Box>
       </Container>
     </div>
   );

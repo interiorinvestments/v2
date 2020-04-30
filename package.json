@@ -12,6 +12,7 @@
     "argon2": "^0.26.2",
     "clsx": "^1.1.0",
     "cookie": "^0.4.1",
+    "formik": "^2.1.4",
     "mongoose": "^5.9.10",
     "next": "latest",
     "next-connect": "^0.6.1",
@@ -21,7 +22,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "swr": "^0.2.0"
+    "swr": "^0.2.0",
+    "yup": "^0.28.5"
   },
   "license": "ISC",
   "devDependencies": {

@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppBar, Box, Button, makeStyles, Toolbar } from '@material-ui/core';
+import { AppBar, Box, Button, Toolbar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
