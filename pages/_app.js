@@ -1,3 +1,5 @@
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 import React, { useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';

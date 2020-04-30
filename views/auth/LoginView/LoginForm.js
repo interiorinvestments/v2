@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-function LoginForm({ className, ...rest }) {
+const LoginForm = ({ className, ...rest }) => {
   const classes = useStyles();
   const [user, { mutate }] = useUser();
   const router = useRouter();
@@ -119,7 +119,7 @@ function LoginForm({ className, ...rest }) {
       )}
     </Formik>
   );
-}
+};
 
 LoginForm.propTypes = {
   className: PropTypes.string,

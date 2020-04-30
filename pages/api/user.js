@@ -10,9 +10,13 @@ handler
   .get((req, res) => {
     // You do not generally want to return the whole user object
     // because it may contain sensitive field such as !!password!! Only return what needed
-    const { username } = req.user;
     try {
-      res.json({ user: { username } });
+      const username = req.user?.username || null;
+      if (username) {
+        res.json({ user: { username } });
+      } else {
+        res.json({ user: null });
+      }
     } catch (err) {
       console.log(err);
       return err;

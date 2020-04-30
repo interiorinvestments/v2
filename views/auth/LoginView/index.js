@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  colors,
   Container,
   IconButton,
   Typography,
@@ -13,7 +12,6 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import LockIcon from '@material-ui/icons/Lock';
 
-// import { Alert } from '@material-ui/lab';
 import Page from '../../../components/Page';
 import LoginForm from './LoginForm';
 
@@ -101,13 +99,6 @@ function LoginView() {
             <Typography variant="subtitle1" color="textSecondary">
               Sign in on the internal platform
             </Typography>
-            {/* <Box mt={2}>
-              <Alert severity="info">
-                <div>
-                  Use <b>admin@devias.io</b> and password <b>admin</b>
-                </div>
-              </Alert>
-            </Box> */}
             <Box mt={3}>
               <LoginForm />
             </Box>
