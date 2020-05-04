@@ -13,19 +13,7 @@ const AppPage = () => {
     if (!loading && !user) router.replace('/login');
   }, [loading, router, user]);
 
-  return (
-    <>
-      {loading ? (
-        <LoadingScreen />
-      ) : (
-        user && (
-          <DashboardLayout>
-            <h1>Products: {user.username}</h1>
-          </DashboardLayout>
-        )
-      )}
-    </>
-  );
+  return <LoadingScreen />;
 };
 
 export default AppPage;

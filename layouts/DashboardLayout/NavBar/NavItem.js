@@ -122,10 +122,7 @@ const NavItem = ({
             `depth-${depth}`,
             router.pathname === href ? classes.active : null
           )}
-          // component={RouterLink}
-          // exact
           style={style}
-          // to={href}
         >
           {Icon && <Icon className={classes.icon} size="20" />}
           <span className={classes.title}>{title}</span>

@@ -18,11 +18,12 @@ import { useUser } from '../../../lib/hooks';
 const useStyles = makeStyles((theme) => ({
   root: {
     zIndex: theme.zIndex.drawer + 100,
-    // boxShadow: 'none',
-    backgroundColor: theme.palette.background.default,
+    boxShadow: 'none',
+    backgroundColor: theme.palette.primary.main,
   },
   logo: {
     width: 100,
+    borderRadius: 3,
   },
   toolbar: {
     minHeight: 64,
@@ -54,14 +55,14 @@ function TopBar({ className, onMobileNavOpen, ...rest }) {
         <Hidden mdDown>
           <Button href="/">
             <img
-              src="/img/logos/IILogo.png"
+              src="/img/logos/IILogo.jpg"
               alt="II Logo"
               className={classes.logo}
             />
           </Button>
         </Hidden>
         <Box ml={2} flexGrow={1} />
-        <Button color="primary" variant="contained" onClick={handleLogout}>
+        <Button color="secondary" variant="contained" onClick={handleLogout}>
           Logout
         </Button>
       </Toolbar>
