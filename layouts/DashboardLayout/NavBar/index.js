@@ -42,21 +42,21 @@ const navConfig = [
     subheader: 'Ideate',
     items: [
       {
-        title: 'Floorplans',
+        title: 'FloorPlans',
         icon: MapIcon,
-        href: '/app/ideate/floorplans',
+        href: '/app/ideate/floorPlans',
         items: [
           {
             title: 'Corporate',
-            href: '/app/ideate/floorplans/corporate',
+            href: '/app/ideate/floorPlans/corporate',
           },
           {
             title: 'Healthcare',
-            href: '/app/ideate/floorplans/healthcare',
+            href: '/app/ideate/floorPlans/healthcare',
           },
           {
             title: 'Education',
-            href: '/app/ideate/floorplans/education',
+            href: '/app/ideate/floorPlans/education',
           },
         ],
       },
@@ -67,12 +67,12 @@ const navConfig = [
     items: [
       {
         title: 'Pictures',
-        href: '/app/images',
+        href: '/app/images/pictures',
         icon: ImageIcon,
       },
       {
         title: 'Testimonials',
-        href: '/app/images',
+        href: '/app/images/testimonials',
         icon: MessageCircleIcon,
       },
     ],

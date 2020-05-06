@@ -9,7 +9,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-import Link from '../../../components/Link';
+import Link from '../../../../components/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -48,10 +48,13 @@ function Header({ className, ...rest }) {
           </Button>
 
           <Typography variant="body2" color="textPrimary">
-            Inform
+            Ideate
           </Typography>
           <Typography variant="body2" color="textPrimary">
-            About Us
+            FloorPlans
+          </Typography>
+          <Typography variant="body2" color="textPrimary">
+            Corporate
           </Typography>
         </Breadcrumbs>
       </Grid>

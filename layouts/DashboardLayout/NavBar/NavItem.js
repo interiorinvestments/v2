@@ -4,9 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+
+import Link from '../../../components/Link';
 
 const useStyles = makeStyles((theme) => ({
   item: {
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginRight: 'auto',
+    textDecoration: 'none',
   },
   active: {
     color: theme.palette.primary.main,
@@ -115,20 +117,21 @@ const NavItem = ({
       key={title}
       {...rest}
     >
-      <Link href={href}>
-        <Button
-          className={clsx(
-            classes.buttonLeaf,
-            `depth-${depth}`,
-            router.pathname === href ? classes.active : null
-          )}
-          style={style}
-        >
-          {Icon && <Icon className={classes.icon} size="20" />}
-          <span className={classes.title}>{title}</span>
-          {Info && <Info className={classes.info} />}
-        </Button>
-      </Link>
+      <Button
+        className={clsx(
+          classes.buttonLeaf,
+          `depth-${depth}`,
+          router.pathname === href ? classes.active : null
+        )}
+        component={Link}
+        naked
+        href={href}
+        style={style}
+      >
+        {Icon && <Icon className={classes.icon} size="20" />}
+        <span className={classes.title}>{title}</span>
+        {Info && <Info className={classes.info} />}
+      </Button>
     </ListItem>
   );
 };

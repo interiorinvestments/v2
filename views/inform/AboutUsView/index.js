@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function CustomerCreateView() {
+const AboutUsView = () => {
   const classes = useStyles();
 
   return (
@@ -49,7 +49,7 @@ function CustomerCreateView() {
               target="_blank"
               rel="noopener"
             >
-              Certified by Herman Miller
+              <a>Certified by Herman Miller</a>
             </Link>{' '}
             since 2001 and recognized as a national performance leader for our
             pioneering work in process innovation, we’ve earned our reputation
@@ -91,7 +91,7 @@ function CustomerCreateView() {
                   target="_blank"
                   rel="noopener"
                 >
-                  National Office Furniture
+                  <a>National Office Furniture</a>
                 </Link>
               </em>
             </Typography>
@@ -100,6 +100,6 @@ function CustomerCreateView() {
       </Container>
     </Page>
   );
-}
+};
 
-export default CustomerCreateView;
+export default AboutUsView;

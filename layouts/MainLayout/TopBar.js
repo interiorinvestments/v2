@@ -1,8 +1,9 @@
 import { AppBar, Box, Button, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+
+import Link from '../../components/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,21 +30,25 @@ const TopBar = ({ className, ...rest }) => {
   return (
     <AppBar className={clsx(classes.root, className)} color="default" {...rest}>
       <Toolbar className={classes.toolbar}>
-        <Link href="/">
-          <Button>
-            <img
-              className={classes.logo}
-              src="/img/logos/IILogo.png"
-              alt="Interior Investments Logo"
-            />
-          </Button>
-        </Link>
+        <Button component={Link} href="/">
+          <img
+            className={classes.logo}
+            src="/img/logos/IILogo.png"
+            alt="Interior Investments Logo"
+          />
+        </Button>
+
         <Box flexGrow={1} />
-        <Link href="/login">
-          <Button color="primary" variant="contained">
-            Log in
-          </Button>
-        </Link>
+
+        <Button
+          color="primary"
+          variant="contained"
+          component={Link}
+          href="/login"
+          naked
+        >
+          Log in
+        </Button>
       </Toolbar>
     </AppBar>
   );

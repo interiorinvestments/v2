@@ -48,10 +48,10 @@ function Header({ className, ...rest }) {
           </Button>
 
           <Typography variant="body2" color="textPrimary">
-            Inform
+            Images
           </Typography>
           <Typography variant="body2" color="textPrimary">
-            About Us
+            Pictures
           </Typography>
         </Breadcrumbs>
       </Grid>
