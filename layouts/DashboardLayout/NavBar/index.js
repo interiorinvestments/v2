@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import {
   Award as AwardIcon,
+  BookOpen as BookOpenIcon,
   Image as ImageIcon,
   Info as InfoIcon,
   Map as MapIcon,
@@ -57,6 +58,25 @@ const navConfig = [
           {
             title: 'Education',
             href: '/app/ideate/floorPlans/education',
+          },
+        ],
+      },
+      {
+        title: 'Product Ideas',
+        icon: BookOpenIcon,
+        href: '/app/ideate/product-ideas',
+        items: [
+          {
+            title: 'Corporate',
+            href: '/app/ideate/product-ideas/corporate',
+          },
+          {
+            title: 'Healthcare',
+            href: '/app/ideate/product-ideas/healthcare',
+          },
+          {
+            title: 'Education',
+            href: '/app/ideate/product-ideas/education',
           },
         ],
       },

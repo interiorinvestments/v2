@@ -1,4 +1,4 @@
-import { Card, Grid, Typography } from '@material-ui/core';
+import { Card, CardActionArea, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -22,9 +22,11 @@ const AreasList = ({ areasItems }) => {
               style={{ borderLeft: `20px solid ${color}` }}
               className={classes.card}
             >
-              <Grid container alignItems="center">
-                <Typography variant="body1">{item.name}</Typography>
-              </Grid>
+              <CardActionArea>
+                <Grid container alignItems="center">
+                  <Typography variant="body1">{item.name}</Typography>
+                </Grid>
+              </CardActionArea>
             </Card>
           </Grid>
         );

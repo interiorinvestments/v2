@@ -12,7 +12,9 @@ import PropTypes from 'prop-types';
 import Link from '../../../../components/Link';
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    marginBottom: theme.spacing(1),
+  },
   actionIcon: {
     marginRight: theme.spacing(1),
   },
