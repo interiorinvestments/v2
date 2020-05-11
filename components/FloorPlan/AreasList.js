@@ -6,7 +6,9 @@ const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
     height: 40,
-    paddingLeft: theme.spacing(2),
+  },
+  typography: {
+    marginLeft: theme.spacing(2),
   },
 }));
 
@@ -19,12 +21,14 @@ const AreasList = ({ areasItems }) => {
         return (
           <Grid key={item.name} item xs={12} sm={6} md={3}>
             <Card
-              style={{ borderLeft: `20px solid ${color}` }}
+              style={{ borderLeft: `25px solid ${color}` }}
               className={classes.card}
             >
               <CardActionArea>
                 <Grid container alignItems="center">
-                  <Typography variant="body1">{item.name}</Typography>
+                  <Typography variant="body1" className={classes.typography}>
+                    {item.name}
+                  </Typography>
                 </Grid>
               </CardActionArea>
             </Card>
