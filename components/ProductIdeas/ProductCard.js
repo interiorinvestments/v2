@@ -1,4 +1,5 @@
 import {
+  ButtonBase,
   Card,
   CardActionArea,
   CardContent,
@@ -6,25 +7,48 @@ import {
   Typography,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
+
+import Link from '../Link';
 
 const useStyles = makeStyles({
+  buttonBase: {
+    width: '100%',
+  },
   media: {
     height: 200,
   },
 });
 
-const ProductCard = ({ idea }) => {
+const ProductCard = ({ category }) => {
   const classes = useStyles();
+  const router = useRouter();
+  console.log(category);
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia className={classes.media} image={idea.img} />
-        <CardContent>
-          <Typography variant="h4">{idea.name} ></Typography>
-        </CardContent>
-      </CardActionArea>
+    <Card>
+      <ButtonBase
+        href={`${router.pathname}/${category.slug}`}
+        component={Link}
+        naked
+        className={classes.buttonBase}
+      >
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={`http://localhost:1337${category.image.url}`}
+          />
+          <CardContent>
+            <Typography variant="h4">{category.name} ></Typography>
+          </CardContent>
+        </CardActionArea>
+      </ButtonBase>
     </Card>
   );
+};
+
+ProductCard.propTypes = {
+  category: PropTypes.object.isRequired,
 };
 export default ProductCard;

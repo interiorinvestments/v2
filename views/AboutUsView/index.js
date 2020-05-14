@@ -2,7 +2,7 @@ import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from 'next/link';
 
-import Page from '../../../components/Page';
+import Page from '../../components/Page';
 import Header from './Header';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,13 +44,13 @@ const AboutUsView = () => {
             the future.
           </Typography>
           <Typography variant="body1" gutterBottom>
-            <Link
+            <a
               href="https://interiorinvestments.com/certified-dealer"
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
             >
-              <a>Certified by Herman Miller</a>
-            </Link>{' '}
+              Certified by Herman Miller
+            </a>{' '}
             since 2001 and recognized as a national performance leader for our
             pioneering work in process innovation, we’ve earned our reputation
             as a valuable strategic partner, and look forward to helping you
@@ -86,13 +86,13 @@ const AboutUsView = () => {
               well-respected dealerships in the office furniture industry.” —{' '}
               <em>
                 Danny Stingley, West Central Divisional Manager at{' '}
-                <Link
+                <a
                   href="https://www.nationalofficefurniture.com/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                 >
-                  <a>National Office Furniture</a>
-                </Link>
+                  National Office Furniture
+                </a>
               </em>
             </Typography>
           </blockquote>

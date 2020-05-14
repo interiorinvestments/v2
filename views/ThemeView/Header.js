@@ -9,12 +9,10 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-import Link from '../../../components/Link';
+import Link from '../../components/Link';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBottom: theme.spacing(1),
-  },
+  root: {},
   actionIcon: {
     marginRight: theme.spacing(1),
   },
@@ -23,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header({ className, ...rest }) {
+const Header = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -48,18 +46,17 @@ function Header({ className, ...rest }) {
           >
             Dashboard
           </Button>
-
           <Typography variant="body2" color="textPrimary">
-            Images
+            Product Ideas
           </Typography>
           <Typography variant="body2" color="textPrimary">
-            Pictures
+            Corporate
           </Typography>
         </Breadcrumbs>
       </Grid>
     </Grid>
   );
-}
+};
 
 Header.propTypes = {
   className: PropTypes.string,

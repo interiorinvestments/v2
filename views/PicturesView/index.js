@@ -1,8 +1,8 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import ImageGridList from '../../../components/ImageGridList';
-import Page from '../../../components/Page';
+import ImageGridList from '../../components/ImageGridList';
+import Page from '../../components/Page';
 import Header from './Header';
 
 const tileData = [

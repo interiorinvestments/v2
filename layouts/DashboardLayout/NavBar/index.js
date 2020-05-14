@@ -30,12 +30,12 @@ const navConfig = [
       {
         title: 'About Us',
         icon: InfoIcon,
-        href: '/app/inform/about-us',
+        href: '/app/about-us',
       },
       {
         title: 'Differentiators',
         icon: AwardIcon,
-        href: '/app/inform/differentiators',
+        href: '/app/differentiators',
       },
     ],
   },
@@ -45,38 +45,38 @@ const navConfig = [
       {
         title: 'FloorPlans',
         icon: MapIcon,
-        href: '/app/ideate/floorPlans',
+        href: '/app/floorPlans',
         items: [
           {
             title: 'Corporate',
-            href: '/app/ideate/floorPlans/corporate',
+            href: '/app/floorPlans/corporate',
           },
           {
             title: 'Healthcare',
-            href: '/app/ideate/floorPlans/healthcare',
+            href: '/app/floorPlans/healthcare',
           },
           {
             title: 'Education',
-            href: '/app/ideate/floorPlans/education',
+            href: '/app/floorPlans/education',
           },
         ],
       },
       {
         title: 'Product Ideas',
         icon: BookOpenIcon,
-        href: '/app/ideate/product-ideas',
+        href: '/app/product-ideas',
         items: [
           {
             title: 'Corporate',
-            href: '/app/ideate/product-ideas/corporate',
+            href: '/app/product-ideas/corporate',
           },
           {
             title: 'Healthcare',
-            href: '/app/ideate/product-ideas/healthcare',
+            href: '/app/product-ideas/healthcare',
           },
           {
             title: 'Education',
-            href: '/app/ideate/product-ideas/education',
+            href: '/app/product-ideas/education',
           },
         ],
       },
@@ -87,12 +87,12 @@ const navConfig = [
     items: [
       {
         title: 'Pictures',
-        href: '/app/images/pictures',
+        href: '/app/pictures',
         icon: ImageIcon,
       },
       {
         title: 'Testimonials',
-        href: '/app/images/testimonials',
+        href: '/app/testimonials',
         icon: MessageCircleIcon,
       },
     ],

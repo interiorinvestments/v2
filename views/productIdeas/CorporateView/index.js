@@ -1,9 +1,8 @@
-import { Container, Typography } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Page from '../../../../components/Page';
-import ProductGallery from '../../../../components/ProductIdeas/ProductGallery';
-import ideas from '../../../../data/ideate/productIdeas/corporate';
+import Page from '../../../components/Page';
+import ProductGallery from '../../../components/ProductIdeas/ProductGallery';
 import Header from './Header';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,15 +14,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CorporateView = () => {
+const CorporateView = ({ themes }) => {
   const classes = useStyles();
-
   return (
     <Page className={classes.root} title="Corporate Products">
       <Container maxWidth={false}>
         <Header />
-        <Typography variant="h1">Product Ideas</Typography>
-        <ProductGallery ideas={ideas} />
+        {themes?.map((theme) => (
+          <ProductGallery theme={theme} />
+        ))}
       </Container>
     </Page>
   );
