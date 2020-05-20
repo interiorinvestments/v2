@@ -1,8 +1,9 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
-import Page from '../../../components/Page';
-import ThemeGallery from '../../../components/ProductIdeas/ThemeGallery';
+import Page from '../../components/Page';
+import ProductCard from '../../components/ProductIdeas/ProductCard';
 import Header from './Header';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,18 +15,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CorporateView = ({ themes }) => {
+const ProductView = ({ product }) => {
   const classes = useStyles();
+
   return (
-    <Page className={classes.root} title="Corporate Products">
+    <Page className={classes.root} title={product.name}>
       <Container maxWidth={false}>
-        <Header />
-        {themes?.map((theme, index) => (
-          <ThemeGallery theme={theme} key={index} />
-        ))}
+        <Header title={product.name} />
+        <ProductCard product={product} />
       </Container>
     </Page>
   );
 };
 
-export default CorporateView;
+ProductView.propTypes = {
+  product: PropTypes.object.isRequired,
+};
+
+export default ProductView;

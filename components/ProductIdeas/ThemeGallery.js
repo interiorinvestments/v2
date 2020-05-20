@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
@@ -11,18 +12,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductGallery = ({ products, title }) => {
+const ThemeGallery = ({ theme }) => {
   const classes = useStyles();
+  const [categories, setCategories] = useState();
 
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_CMS_URL}/themes/${theme.id}`
+      );
+      const data = await res.json();
+      setCategories(data.categories);
+    };
+    getData();
+  }, [theme.id]);
   return (
     <>
       <Typography variant="h1" className={classes.name}>
-        {title}
+        {theme.title}
       </Typography>
       <Grid container alignItems="flex-start" direction="row" spacing={4}>
-        {products?.map((product, index) => (
+        {categories?.map((category, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <CategoryCard category={product} />
+            <CategoryCard category={category} />
           </Grid>
         ))}
       </Grid>
@@ -30,9 +42,8 @@ const ProductGallery = ({ products, title }) => {
   );
 };
 
-ProductGallery.propTypes = {
-  products: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
+ThemeGallery.propTypes = {
+  theme: PropTypes.object.isRequired,
 };
 
-export default ProductGallery;
+export default ThemeGallery;

@@ -1,5 +1,6 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 import Page from '../../components/Page';
 import ProductGallery from '../../components/ProductIdeas/ProductGallery';
@@ -14,19 +15,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ThemeView = ({ product }) => {
+const ThemeView = ({ products, title }) => {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Theme Products">
+    <Page className={classes.root} title={title}>
       <Container maxWidth={false}>
-        <Header />
-        {products?.map((product) => (
-          <ProductGallery theme={product} />
-        ))}
+        <Header title={title} />
+        <ProductGallery products={products} title={title} />
       </Container>
     </Page>
   );
+};
+
+ThemeView.propTypes = {
+  products: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default ThemeView;

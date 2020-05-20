@@ -1,6 +1,7 @@
   {
     "extends": [
       "airbnb",
+      "airbnb/hooks",
       "prettier",
       "prettier/react",
       "plugin:jest/recommended",
@@ -8,7 +9,6 @@
     ],
     "parser": "babel-eslint",
     "parserOptions": {
-      "ecmaVersion": 2020,
       "ecmaFeatures": {
         "impliedStrict": true,
         "classes": true
@@ -16,9 +16,9 @@
     },
     "env": {
       "browser": true,
+      "es2020": true,
+      "jest": true,
       "node": true,
-      "jquery": true,
-      "jest": true
     },
     "rules": {
       "no-debugger": 0,

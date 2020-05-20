@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import DashboardLayout from '../../../../layouts/DashboardLayout';
 import CorporateView from '../../../../views/productIdeas/CorporateView';
 
@@ -8,7 +10,7 @@ const CorporatePage = ({ themes }) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:1337/markets/1');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/markets/1`);
   const markets = await res.json();
 
   return {
@@ -17,5 +19,9 @@ export async function getStaticProps() {
     },
   };
 }
+
+CorporatePage.propTypes = {
+  themes: PropTypes.array.isRequired,
+};
 
 export default CorporatePage;
