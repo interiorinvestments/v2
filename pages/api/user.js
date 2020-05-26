@@ -1,6 +1,6 @@
 import nextConnect from 'next-connect';
 
-import { deleteUser, updateUserByUsername } from '../../lib/db';
+import { deleteUser, updateUserByUsername } from '../../lib/db/user';
 import auth from '../../middleware/auth';
 
 const handler = nextConnect();
@@ -18,7 +18,6 @@ handler
         res.json({ user: null });
       }
     } catch (err) {
-      console.log(err);
       return err;
     }
   })
@@ -32,7 +31,6 @@ handler
         next();
       }
     } catch (err) {
-      console.log(err);
       return err;
     }
   })

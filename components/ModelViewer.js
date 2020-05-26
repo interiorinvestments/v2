@@ -2,20 +2,20 @@ import '@google/model-viewer';
 
 import PropTypes from 'prop-types';
 
-const ModelViewer = ({ model }) => (
+const ModelViewer = ({ product }) => (
   <model-viewer
-    src={model.model}
+    src={`${process.env.NEXT_PUBLIC_CMS_URL}${product.model.url}`}
     ar
-    alt={model.name}
+    alt={product.name}
     auto-rotate
     camera-controls
-    ios-src={model.iosModel}
-    style={{ height: 'auto', width: '100%' }}
+    ios-src={`${process.env.NEXT_PUBLIC_CMS_URL}${product.iosModel.url}`}
+    style={{ height: '100%', minHeight: '200px', width: '100%' }}
   />
 );
 
 ModelViewer.propTypes = {
-  model: PropTypes.object.isRequired,
+  product: PropTypes.object.isRequired,
 };
 
 export default ModelViewer;

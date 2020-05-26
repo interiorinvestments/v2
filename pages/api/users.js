@@ -1,7 +1,7 @@
 import argon2 from 'argon2';
 import nextConnect from 'next-connect';
 
-import { createUser, findUserByUsername, getAllUsers } from '../../lib/db';
+import { createUser, findUserByUsername, getAllUsers } from '../../lib/db/user';
 import auth from '../../middleware/auth';
 
 const handler = nextConnect();

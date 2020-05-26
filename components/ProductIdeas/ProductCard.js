@@ -7,6 +7,9 @@ import ThreeDRotationIcon from '@material-ui/icons/ThreeDRotation';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 
+import formatCurrency from '../../utils/formatCurrency';
+import AddToCart from '../AddToCart';
+
 const ModelViewer = dynamic(() => import('../ModelViewer'), {
   ssr: false,
 });
@@ -29,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = ({ product }) => {
   const classes = useStyles();
   const [toggleModel, setToggleModel] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Typography variant="h1">{product.name}</Typography>
@@ -45,7 +55,7 @@ const ProductCard = ({ product }) => {
               className={classes.img}
             />
           ) : (
-            <ModelViewer model={product} />
+            <ModelViewer product={product} />
           )}
         </Grid>
         <Grid item xs={12} sm={6} className={classes.details}>
@@ -56,9 +66,9 @@ const ProductCard = ({ product }) => {
           <Typography variant="body2" color="textSecondary" gutterBottom>
             {product.company}
           </Typography>
-          <Typography variant="subtitle1">Price</Typography>
+          <Typography variant="subtitle1">Starting Price</Typography>
           <Typography variant="body2" color="textSecondary" gutterBottom>
-            {product.price}
+            {formatCurrency(product.price)}
           </Typography>
           <Typography variant="subtitle1">Description</Typography>
           <Typography variant="body2" color="textSecondary" gutterBottom>
@@ -68,32 +78,37 @@ const ProductCard = ({ product }) => {
             variant="contained"
             color="primary"
             className={classes.button}
+            onClick={handleClickOpen}
           >
-            Add to &nbsp; <ShoppingCartOutlinedIcon />
+            <ShoppingCartOutlinedIcon /> Add to cart
           </Button>
-          {!toggleModel ? (
-            <Button
-              variant="outlined"
-              color="primary"
-              className={classes.button}
-              onClick={() => setToggleModel(true)}
-            >
-              View in &nbsp;
-              <ThreeDRotationIcon />
-            </Button>
-          ) : (
-            <Button
-              variant="outlined"
-              color="primary"
-              className={classes.button}
-              onClick={() => setToggleModel(false)}
-            >
-              View image &nbsp;
-              <ImageOutlinedIcon />
-            </Button>
+          {product.model && (
+            <>
+              {!toggleModel ? (
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className={classes.button}
+                  onClick={() => setToggleModel(true)}
+                >
+                  <ThreeDRotationIcon />
+                  &nbsp; View
+                </Button>
+              ) : (
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className={classes.button}
+                  onClick={() => setToggleModel(false)}
+                >
+                  <ImageOutlinedIcon /> View
+                </Button>
+              )}
+            </>
           )}
         </Grid>
       </Grid>
+      <AddToCart handleClose={handleClose} open={open} product={product} />
     </>
   );
 };
