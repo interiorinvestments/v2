@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import LoadingScreen from '../../components/LoadingScreen';
 import DashboardLayout from '../../layouts/DashboardLayout';
 import { useUser } from '../../lib/hooks';
+import DashboardView from '../../views/DashboardView';
 
 const AppPage = () => {
   const [user, { loading }] = useUser();
@@ -20,7 +21,7 @@ const AppPage = () => {
       ) : (
         user && (
           <DashboardLayout>
-            <h1>User: {user.username}</h1>
+            <DashboardView />
           </DashboardLayout>
         )
       )}
