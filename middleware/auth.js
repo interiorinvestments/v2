@@ -26,6 +26,7 @@ const auth = nextConnect()
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
     });
     next();
   })

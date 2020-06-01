@@ -69,10 +69,10 @@ function Hero({ className, ...rest }) {
                 <Grid container spacing={3}>
                   <Grid item>
                     <Typography variant="h1" color="primary">
-                      30+
+                      5
                     </Typography>
                     <Typography variant="overline" color="textSecondary">
-                      Demo Pages
+                      Locations
                     </Typography>
                   </Grid>
                   <Grid item>

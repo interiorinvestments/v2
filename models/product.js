@@ -26,6 +26,10 @@ const productSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  subTotal: {
+    type: Number,
+    required: true,
+  },
 });
 
 export default mongoose.models.Product ||

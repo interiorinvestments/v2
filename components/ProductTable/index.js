@@ -16,6 +16,7 @@ import {
 import MaterialTable from 'material-table';
 
 import typography from '../../src/theme/typography';
+import formatCurrency from '../../utils/formatCurrency';
 
 const tableIcons = {
   Check: forwardRef((props, ref) => (
@@ -50,13 +51,19 @@ const theme = createMuiTheme({
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
 
+  const getTotal = (items) =>
+    items.reduce((sum, product) => sum + product.subTotal, 0) * 100;
+
   useEffect(() => {
     const getProducts = async () => {
       try {
         const res = await fetch('/api/products');
         if (res.status === 200) {
           const response = await res.json();
-          // add subtotal
+          response.products.forEach((product) => {
+            product.subTotal /= 100;
+            product.price /= 100;
+          });
           setProducts(response.products);
         }
       } catch (err) {
@@ -99,14 +106,14 @@ const ProductTable = () => {
             },
             {
               title: 'Subtotal',
-              field: 'subtotal',
+              field: 'subTotal',
               type: 'currency',
               editable: 'never',
             },
           ]}
           data={products}
           icons={tableIcons}
-          title="Products"
+          title={`Total: ${formatCurrency(getTotal(products))}`}
           isLoading={products.length === 0}
           options={{
             actionsColumnIndex: -1,
@@ -115,9 +122,23 @@ const ProductTable = () => {
           editable={{
             onRowUpdate: (newData, oldData) =>
               new Promise((resolve, reject) => {
-                setTimeout(() => {
+                setTimeout(async () => {
                   const dataUpdate = [...products];
                   const index = oldData.tableData.id;
+                  newData.subTotal = newData.quantity * newData.price;
+                  try {
+                    const res = await fetch(`/api/product/${newData.slug}`, {
+                      method: 'PUT',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        quantity: +newData.quantity,
+                        subTotal: newData.subTotal,
+                      }),
+                    });
+                    const response = await res.json();
+                  } catch (err) {
+                    throw new Error(err);
+                  }
                   dataUpdate[index] = newData;
                   setProducts([...dataUpdate]);
 

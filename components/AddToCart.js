@@ -46,7 +46,7 @@ const AddToCart = ({ handleClose, open, product }) => {
         const res = await fetch(`/api/product/${product.slug}`);
         if (res.status === 200) {
           const response = await res.json();
-          setQuantity(response.quantity);
+          setQuantity(response.product.quantity);
         }
       } catch (err) {
         throw new Error(err);
