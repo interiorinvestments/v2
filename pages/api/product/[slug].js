@@ -1,6 +1,7 @@
 import nextConnect from 'next-connect';
 
 import {
+  deleteProduct,
   findProductBySlug,
   updateProductBySlug,
 } from '../../../lib/db/product';
@@ -35,6 +36,17 @@ handler
         return res.status(404).end();
       }
       return res.status(202).json(product);
+    } catch (err) {
+      return res.status(500).send();
+    }
+  })
+  .delete(async (req, res) => {
+    const {
+      query: { slug },
+    } = req;
+    try {
+      await deleteProduct(slug);
+      return res.status(204).json({ message: 'Product removed' });
     } catch (err) {
       return res.status(500).send();
     }

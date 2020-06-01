@@ -1,9 +1,10 @@
+import { Download as DownloadIcon, Trash2 as TrashIcon } from 'react-feather';
 import {
   Breadcrumbs,
   Button,
   Grid,
   makeStyles,
-  Typography,
+  SvgIcon,
 } from '@material-ui/core';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import clsx from 'clsx';
@@ -15,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: theme.spacing(1),
   },
+  action: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
   actionIcon: {
     marginRight: theme.spacing(1),
   },
@@ -23,9 +28,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = ({ className, title, ...rest }) => {
+const Header = ({ className, handleRemoveAll, ...rest }) => {
   const classes = useStyles();
 
+  const handleToPDF = () => {
+    window.print();
+  };
   return (
     <Grid
       container
@@ -50,6 +58,30 @@ const Header = ({ className, title, ...rest }) => {
           </Button>
         </Breadcrumbs>
       </Grid>
+      <Grid item>
+        <Button
+          color="primary"
+          variant="contained"
+          className={classes.action}
+          onClick={handleToPDF}
+        >
+          <SvgIcon fontSize="small" className={classes.actionIcon}>
+            <DownloadIcon />
+          </SvgIcon>
+          to PDF
+        </Button>
+        <Button
+          color="secondary"
+          variant="contained"
+          className={classes.action}
+          onClick={handleRemoveAll}
+        >
+          <SvgIcon fontSize="small" className={classes.actionIcon}>
+            <TrashIcon />
+          </SvgIcon>
+          Remove All
+        </Button>
+      </Grid>
     </Grid>
   );
 };
@@ -57,6 +89,7 @@ const Header = ({ className, title, ...rest }) => {
 Header.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
+  handleRemoveAll: PropTypes.func.isRequired,
 };
 
 export default Header;

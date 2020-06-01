@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef } from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
   ArrowDownward,
@@ -14,6 +14,7 @@ import {
   Search,
 } from '@material-ui/icons';
 import MaterialTable from 'material-table';
+import PropTypes from 'prop-types';
 
 import typography from '../../src/theme/typography';
 import formatCurrency from '../../utils/formatCurrency';
@@ -48,30 +49,9 @@ const theme = createMuiTheme({
   },
 });
 
-const ProductTable = () => {
-  const [products, setProducts] = useState([]);
-
+const ProductTable = ({ products, setProducts }) => {
   const getTotal = (items) =>
     items.reduce((sum, product) => sum + product.subTotal, 0) * 100;
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await fetch('/api/products');
-        if (res.status === 200) {
-          const response = await res.json();
-          response.products.forEach((product) => {
-            product.subTotal /= 100;
-            product.price /= 100;
-          });
-          setProducts(response.products);
-        }
-      } catch (err) {
-        throw new Error(err);
-      }
-    };
-    getProducts();
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -147,9 +127,19 @@ const ProductTable = () => {
               }),
             onRowDelete: (oldData) =>
               new Promise((resolve, reject) => {
-                setTimeout(() => {
+                setTimeout(async () => {
                   const dataDelete = [...products];
                   const index = oldData.tableData.id;
+                  try {
+                    await fetch(`/api/product/${oldData.slug}`, {
+                      method: 'DELETE',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                    });
+                  } catch (err) {
+                    throw new Error(err);
+                  }
                   dataDelete.splice(index, 1);
                   setProducts([...dataDelete]);
 
@@ -161,6 +151,11 @@ const ProductTable = () => {
       </div>
     </ThemeProvider>
   );
+};
+
+ProductTable.propTypes = {
+  products: PropTypes.array.isRequired,
+  setProducts: PropTypes.func.isRequired,
 };
 
 export default ProductTable;

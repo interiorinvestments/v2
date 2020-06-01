@@ -3,6 +3,12 @@
   src: url('../fonts/MetaOT-Book.otf') format('opentype');
 }
 
+@media print {
+  body {
+    width: 1200px;
+  }
+}
+
 body {
   font-family: 'MetaOT-Book, Calibri, Arial';
 }
