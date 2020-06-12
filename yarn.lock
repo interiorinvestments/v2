@@ -1100,16 +1100,16 @@
     "@hapi/cryptiles" "5.x.x"
     "@hapi/hoek" "9.x.x"
 
-"@material-ui/core@^4.10.1":
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.10.1.tgz#e3db4ca55d2af6cc23a1159ef5c32ad97c43c39c"
-  integrity sha512-bJb/07JFTht0oSjoWMu0j7r1mx4EbJ2ZHx+OKiY+i6IYW/4JPZ1J6rZuFS2b9jT+slSONPZaZq/kHitbE5lcig==
+"@material-ui/core@^4.10.2":
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.10.2.tgz#0ef78572132fcef1a25f6969bce0d34652d42e31"
+  integrity sha512-Uf4iDLi9sW6HKbVQDyDZDr1nMR4RUAE7w/RIIJZGNVZResC0xwmpLRZMtaUdSO43N0R0yJehfxTi4Z461Cd49A==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@material-ui/styles" "^4.10.0"
     "@material-ui/system" "^4.9.14"
     "@material-ui/types" "^5.1.0"
-    "@material-ui/utils" "^4.9.12"
+    "@material-ui/utils" "^4.10.2"
     "@types/react-transition-group" "^4.2.0"
     clsx "^1.0.4"
     hoist-non-react-statics "^3.3.2"
@@ -1174,7 +1174,16 @@
   resolved "https://registry.yarnpkg.com/@material-ui/types/-/types-5.1.0.tgz#efa1c7a0b0eaa4c7c87ac0390445f0f88b0d88f2"
   integrity sha512-7cqRjrY50b8QzRSYyhSpx4WRw2YuO0KKIGQEVk5J8uoz2BanawykgZGoWEqKm7pVIbzFDN0SpPcVV4IhOFkl8A==
 
-"@material-ui/utils@^4.9.12", "@material-ui/utils@^4.9.6":
+"@material-ui/utils@^4.10.2":
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@material-ui/utils/-/utils-4.10.2.tgz#3fd5470ca61b7341f1e0468ac8f29a70bf6df321"
+  integrity sha512-eg29v74P7W5r6a4tWWDAAfZldXIzfyO1am2fIsC39hdUUHm/33k6pGOKPbgDjg/U/4ifmgAePy/1OjkKN6rFRw==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+    prop-types "^15.7.2"
+    react-is "^16.8.0"
+
+"@material-ui/utils@^4.9.6":
   version "4.9.12"
   resolved "https://registry.yarnpkg.com/@material-ui/utils/-/utils-4.9.12.tgz#0d639f1c1ed83fffb2ae10c21d15a938795d9e65"
   integrity sha512-/0rgZPEOcZq5CFA4+4n6Q6zk7fi8skHhH2Bcra8R3epoJEYy5PL55LuMazPtPH1oKeRausDV/Omz4BbgFsn1HQ==
@@ -3109,10 +3118,10 @@ eslint-plugin-html@^6.0.2:
   dependencies:
     htmlparser2 "^4.1.0"
 
-eslint-plugin-import@^2.21.0:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.21.0.tgz#15cb42ba1db390068d67ed8d4810d817c952a6c8"
-  integrity sha512-fbbjKv3jv23WZ1+uCyYOGx+J8H4vAVlVcc9YLHRCycDry1LdgjdSvt7O0dQS1PwOUu/s0QWfR1xE7mq0GuqYnA==
+eslint-plugin-import@^2.21.2:
+  version "2.21.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.21.2.tgz#8fef77475cc5510801bedc95f84b932f7f334a7c"
+  integrity sha512-FEmxeGI6yaz+SnEB6YgNHlQK1Bs2DKLM+YF+vuTk5H8J9CLbJLtlPvRFgZZ2+sXiKAlN5dpdlrWOjK8ZoZJpQA==
   dependencies:
     array-includes "^3.1.1"
     array.prototype.flat "^1.2.3"
@@ -3184,10 +3193,10 @@ eslint-plugin-simple-import-sort@^5.0.3:
   resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-5.0.3.tgz#9ae258ddada6efffc55e47a134afbd279eb31fc6"
   integrity sha512-1rf3AWiHeWNCQdAq0iXNnlccnH1UDnelGgrPbjBBHE8d2hXVtOudcmy0vTF4hri3iJ0MKz8jBhmH6lJ0ZWZLHQ==
 
-eslint-plugin-testing-library@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-3.2.0.tgz#d4d6cb90888fce04523338ee293841d98fde740e"
-  integrity sha512-ScM0vdpnRt2Piziilfr93z0J0IxyUc6fz/vnqwLhra26/xXB62pAmLBwOjn7VORGcaV/2chKNPPdwhBiQNM6Lw==
+eslint-plugin-testing-library@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-3.2.3.tgz#5c57d90695e0b4012ffa5c185dba5a7140ceef3d"
+  integrity sha512-7H3QcG3h5/F+0LV70IjF+riIxKrTNLEh6kkUUZKCvAvI+utBHteZQAitP1UeYUeH4sL7VoXrbCLpxzn5WoVgIA==
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.29.0"
 
@@ -4909,10 +4918,10 @@ neo-async@2.6.1, neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-next-connect@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.7.0.tgz#4dd4c7ce7e5f83ae4e56a1bd39bdfc06db737407"
-  integrity sha512-wiLg7REMk8/o4CFJ01kXKtKEZykIEitSgdctQhquZ26jTQAn9BGLxVNbJW/8FpyTuh0vdXtWLGz8aBdlMVfN9g==
+next-connect@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.7.1.tgz#c62bb466d924585f1b5fc39e4828672e2bc66007"
+  integrity sha512-EQ4BIlEEpQyneRXrPGAGBHMGK9kghKEPcvWWZWO1Vzn1TJP16YLw+8y0qtT54/x/FlD0dC0AQCwZydKWqqAQBQ==
   dependencies:
     trouter "^3.1.0"
 
