@@ -9,7 +9,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-import Link from '../../../../components/Link';
+import Link from '../../../components/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {

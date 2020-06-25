@@ -1,5 +1,5 @@
 import DashboardLayout from '../../../layouts/DashboardLayout';
-import CorporateView from '../../../views/ideate/floorPlans/CorporateView';
+import CorporateView from '../../../views/floorPlans/CorporateView';
 
 const CorporatePage = () => (
   <DashboardLayout>

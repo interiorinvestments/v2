@@ -1,9 +1,9 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Floorplan from '../../../../components/FloorPlan';
-import Page from '../../../../components/Page';
-import MAP from '../../../../data/ideate/floorPlan/corporate';
+import Floorplan from '../../../components/FloorPlan';
+import Page from '../../../components/Page';
+import MAP from '../../../data/floorPlan/corporate';
 import Header from './Header';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +23,7 @@ const CorporateView = () => {
       <Container maxWidth={false}>
         <Header />
         <Floorplan
-          image="/img/ideate/floorPlans/Baltimore1.png"
+          image="/img/floorPlans/Baltimore1.png"
           map={MAP}
           title="Corporate"
         />

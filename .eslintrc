@@ -37,8 +37,10 @@
       "no-unused-vars": [
         1,
         {
-          "ignoreSiblings": true,
-          "argsIgnorePattern": "res|next|^err"
+          "vars": "all",
+          "args": "all",
+          "argsIgnorePattern": "res|next|^err",
+          "ignoreRestSiblings": true
         }
       ],
       "prefer-const": [
