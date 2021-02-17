@@ -1,4 +1,4 @@
-# next-connect and Passport
+# v2 - previous iiexperience connected to strapi backend for content management
 
 This example creates a basic [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) app using [next-connect](https://github.com/hoangvvo/next-connect) and cookie-based authentication with [Passport.js](http://www.passportjs.org/). The cookie is securely encrypted using [@hapi/iron](https://github.com/hapijs/iron).
 
